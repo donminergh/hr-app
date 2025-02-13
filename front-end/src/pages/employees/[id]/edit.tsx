@@ -29,9 +29,7 @@ export default function EditEmployee() {
         // Format date to YYYY-MM-DD for input[type="date"]
         const formattedEmployee = {
           ...employee,
-          joiningDate: new Date(employee.joiningDate)
-            .toISOString()
-            .split("T")[0],
+          joiningDate: new Date(employee.joiningDate),
         };
         reset(formattedEmployee);
       }
