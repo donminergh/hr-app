@@ -35,7 +35,7 @@ export default function EmployeeList() {
       });
 
       if (response.ok) {
-        setEmployees(employees.filter((emp) => emp.id !== id));
+        setEmployees(employees.filter((emp) => emp.id.toString() !== id));
         setDeleteConfirm(null);
       }
     } catch (error) {
