@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node node_dist/index.js",
     "lint": "eslint . --ext .ts",
     "typeorm": "typeorm-ts-node-commonjs"
   },

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { EmployeeService } from "../services/EmployeeService";
+import { EmployeeService } from "../services/EmployeeServices";
 
 export class EmployeeController {
   private employeeService: EmployeeService;
@@ -12,7 +12,7 @@ export class EmployeeController {
     try {
       const employee = await this.employeeService.createEmployee(req.body);
       res.status(201).json(employee);
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
   }
@@ -21,7 +21,7 @@ export class EmployeeController {
     try {
       const employees = await this.employeeService.getAllEmployees();
       res.json(employees);
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
   }
@@ -36,7 +36,7 @@ export class EmployeeController {
       } else {
         res.status(404).json({ error: "Employee not found" });
       }
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
   }
@@ -52,7 +52,7 @@ export class EmployeeController {
       } else {
         res.status(404).json({ error: "Employee not found" });
       }
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
   }
@@ -65,7 +65,7 @@ export class EmployeeController {
       } else {
         res.status(404).json({ error: "Employee not found" });
       }
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
   }

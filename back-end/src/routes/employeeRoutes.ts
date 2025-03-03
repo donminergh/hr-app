@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { EmployeeController } from "../controllers/EmployeeController";
-import { EmployeeService } from "../services/EmployeeService";
+import { EmployeeService } from "../services/EmployeeServices";
 import { DataSource } from "typeorm";
 
 export const createEmployeeRouter = (dataSource: DataSource) => {

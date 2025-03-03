@@ -10,7 +10,7 @@ app.use(cors());
 
 const AppDataSource = new DataSource({
   type: "mongodb",
-  url: "mongodb://localhost:27017/hr_app",
+  url: "mongodb://localhost:27017/hr-app",
   useNewUrlParser: true,
   useUnifiedTopology: true,
   synchronize: true,

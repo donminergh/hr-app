@@ -3,26 +3,26 @@ import { Entity, ObjectId, ObjectIdColumn, Column } from "typeorm";
 @Entity()
 export class Employee {
   @ObjectIdColumn()
-  id: ObjectId;
+  id!: ObjectId;
 
   @Column()
-  firstName: string;
+  firstName!: string;
 
   @Column()
-  lastName: string;
+  lastName!: string;
 
   @Column()
-  email: string;
+  email!: string;
 
   @Column()
-  position: string;
+  position!: string;
 
   @Column()
-  department: string;
+  department!: string;
 
   @Column()
-  joiningDate: Date;
+  joiningDate!: Date;
 
   @Column()
-  salary: number;
+  salary!: number;
 }

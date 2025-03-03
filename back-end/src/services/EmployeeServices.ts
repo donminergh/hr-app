@@ -12,7 +12,7 @@ export class EmployeeService {
     try {
       const employee = this.employeeRepository.create(employeeData);
       return await this.employeeRepository.save(employee);
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error creating employee: ${error.message}`);
     }
   }
@@ -20,7 +20,7 @@ export class EmployeeService {
   async getAllEmployees(): Promise<Employee[]> {
     try {
       return await this.employeeRepository.find();
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error fetching employees: ${error.message}`);
     }
   }
@@ -30,7 +30,7 @@ export class EmployeeService {
       return await this.employeeRepository.findOne({
         where: { _id: new ObjectId(id) },
       });
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error fetching employee: ${error.message}`);
     }
   }
@@ -50,7 +50,7 @@ export class EmployeeService {
       }
 
       return await this.getEmployeeById(id);
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error updating employee: ${error.message}`);
     }
   }
@@ -61,7 +61,7 @@ export class EmployeeService {
         _id: new ObjectId(id),
       });
       return result.deletedCount > 0;
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error deleting employee: ${error.message}`);
     }
   }
@@ -72,7 +72,7 @@ export class EmployeeService {
       return await this.employeeRepository.find({
         where: { department },
       });
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(
         `Error fetching employees by department: ${error.message}`
       );
@@ -92,7 +92,7 @@ export class EmployeeService {
           },
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(
         `Error fetching employees by date range: ${error.message}`
       );
@@ -103,7 +103,7 @@ export class EmployeeService {
     try {
       const employees = await this.getEmployeesByDepartment(department);
       return employees.reduce((total, emp) => total + emp.salary, 0);
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(`Error calculating total salary: ${error.message}`);
     }
   }
